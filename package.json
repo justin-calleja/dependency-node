@@ -1,0 +1,29 @@
+{
+  "name": "@justinc/dependency-node",
+  "version": "0.0.1",
+  "description": "",
+  "main": "lib/index.js",
+  "typings": "./lib/index.d.ts",
+  "scripts": {
+    "clean": "rm -rf ./lib && mkdir ./lib",
+    "build": "npm run clean && tsc -p ./tsconfig.json",
+    "postversion": "git push origin master && git push --tags",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/justin-calleja/dependency-node.git"
+  },
+  "author": "Justin Calleja <calleja.justin@gmail.com> (justincalleja.com)",
+  "license": "ISC",
+  "devDependencies": {
+    "pkg-json-info-dict": "~0.0.8",
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3",
+    "typescript": "^1.8.10",
+    "typings": "^1.3.0"
+  },
+  "dependencies": {
+    "semver": "^5.2.0"
+  }
+}
