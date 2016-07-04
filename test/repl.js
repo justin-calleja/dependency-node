@@ -1,7 +1,9 @@
 var repl = require('repl');
 var pkgJSONInfoDict = require('./fixtures/abc.json');
+var dependents = require('./fixtures/dependents.json');
 var pkgJSONOps = require('pkg-json-info-dict').pkgJSONOps;
 var DependencyNode = require('../lib').DependencyNode;
+var dependentsOps = require('pkg-dependents').dependentsOps;
 
 var replServer = repl.start({
   prompt: '> '
@@ -14,4 +16,15 @@ var dependencyNodes = replServer.context.dependencyNodes = pkgJSONOps.reduceDepe
   return acc;
 }, []);
 
-replServer.context.result = dependencyNodes.map(node => node.toString());
+replServer.context.dependencyNodesAsStr = dependencyNodes.map(node => node.toString());
+
+var pkgName2 = 'd';
+replServer.context.reducedDependents = dependentsOps.reduceDependents(dependents, (acc, dependentName, ofDependentType, ofDependencyType) => {
+  var dependentPkgJSON = dependents[ofDependentType][dependentName];
+  var depNode = new DependencyNode(pkgName2, ofDependencyType, pkgJSONInfoDict[pkgName2].pkgJSON, dependentPkgJSON.pkgJSON);
+  acc.push({
+    label: `${dependentName}`,
+    nodes: [depNode.toString()]
+  });
+  return acc;
+}, []);

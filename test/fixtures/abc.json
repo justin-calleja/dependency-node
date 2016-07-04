@@ -56,12 +56,12 @@
     "pkgJSON": {
       "name": "d",
       "version": "0.0.1",
-      "dependencies": {
-        "f": "^0.0.3",
-        "no-y": "^0.0.1"
-      },
       "devDependencies": {
         "g": "^0.0.1"
+      },
+      "peerDependencies": {
+        "a": "~0.0.1",
+        "b": "~0.0.1"
       }
     }
   },

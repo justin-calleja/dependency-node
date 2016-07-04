@@ -17,11 +17,13 @@
   "author": "Justin Calleja <calleja.justin@gmail.com> (justincalleja.com)",
   "license": "ISC",
   "devDependencies": {
+    "pkg-dependents": "~0.0.12",
     "pkg-json-info-dict": "~0.0.8",
     "typescript": "^1.8.10",
     "typings": "^1.3.0"
   },
   "dependencies": {
+    "chalk": "^1.1.3",
     "semver": "^5.2.0"
   }
 }
