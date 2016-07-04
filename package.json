@@ -12,7 +12,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/justin-calleja/dependency-node.git"
+    "url": "https://jcalleja@stash.nemeabank.com/scm/fe-utils/dependency-node.git"
+  },
+  "publishConfig": {
+    "registry": "https://nexus.nemeabank.com/repository/npm-local/"
   },
   "author": "Justin Calleja <calleja.justin@gmail.com> (justincalleja.com)",
   "license": "ISC",
