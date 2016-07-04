@@ -1,5 +1,5 @@
 {
-  "name": "@justinc/dependency-node",
+  "name": "@nemea/dependency-node",
   "version": "1.0.0",
   "description": "",
   "main": "lib/index.js",
